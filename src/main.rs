@@ -14,7 +14,10 @@ fn main() {
 
 fn setup(mut commands: Commands) {
     commands
-        .spawn(Camera2dComponents::default())
+        .spawn(Camera2dComponents {
+            transform: Transform::from_scale(0.5),
+            ..Camera2dComponents::default()
+        })
         .with(MainCamera {})
         ;
 }
